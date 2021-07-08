@@ -3,7 +3,10 @@ import styles from 'components/Notification/Notification.module.css';
 
 export default function Notification({ message }) {
     return (
-        <p>{message}</p>
+        <p className={styles.message}>{message}</p>
     )
 }
 
+Notification.propTypes = {
+    message: PropTypes.string.isRequired,
+};

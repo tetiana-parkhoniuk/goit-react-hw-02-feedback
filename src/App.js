@@ -3,7 +3,6 @@ import Section from 'components/Section';
 import FeedbackOptions from 'components/FeedbackOptions';
 import Statistics from 'components/Statistics';
 import Notification from 'components/Notification';
-import styles from 'App.module.css';
 
 
 export default class App extends Component {
@@ -30,9 +29,10 @@ export default class App extends Component {
     const total = this.countTotalFeedback();
     const { good } = this.state;
     const positivePercentage = (good / total) * 100;
-    return Math.round(positivePercentage);
+    return parseInt(Math.round(positivePercentage));
 
   }
+
   render() {
     const { good, neutral, bad } = this.state;
     const objectKeys = Object.keys(this.state);
